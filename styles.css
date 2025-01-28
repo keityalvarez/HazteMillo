@@ -40,4 +40,18 @@ button:hover {
 #log-messages {
     list-style-type: none;
     padding: 0;
+}#customization-screen {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+#customization-screen input, 
+#customization-screen select, 
+#customization-screen button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
