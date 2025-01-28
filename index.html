@@ -8,7 +8,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game-container">
+  <div id="customization-screen">
+    <h2>Personaliza tu personaje</h2>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" placeholder="Escribe tu nombre">
+    
+    <label for="gender">Género:</label>
+    <select id="gender">
+        <option value="male">Masculino</option>
+        <option value="female">Femenino</option>
+    </select>
+
+    <button onclick="startGame()">Comenzar Juego</button>
+</div>
+
+<!-- Contenedor del juego (oculto al inicio) -->
+<div id="game-container" style="display: none;">
+    <h1>¡Hazte Millonario!</h1>
+    <p id="welcome-message"></p>
+    <p>Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
+    <p><strong>Capital:</strong> <span id="capital">10000</span></p>
+    
+    <button onclick="openStore()">Abrir una tienda ($5,000)</button>
+    <button onclick="invest()">Invertir en acciones ($3,000)</button>
+    <button onclick="startStartup()">Crear una startup ($7,000)</button>
+
+    <p><strong>Registro:</strong></p>
+    <div id="log"></div>
+</div>  <div id="customization-screen">
+    <h2>Personaliza tu personaje</h2>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" placeholder="Escribe tu nombre">
+    
+    <label for="gender">Género:</label>
+    <select id="gender">
+        <option value="male">Masculino</option>
+        <option value="female">Femenino</option>
+    </select>
+
+    <button onclick="startGame()">Comenzar Juego</button>
+</div>
+
+<!-- Contenedor del juego (oculto al inicio) -->
+<div id="game-container" style="display: none;">
+    <h1>¡Hazte Millonario!</h1>
+    <p id="welcome-message"></p>
+    <p>Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
+    <p><strong>Capital:</strong> <span id="capital">10000</span></p>
+    
+    <button onclick="openStore()">Abrir una tienda ($5,000)</button>
+    <button onclick="invest()">Invertir en acciones ($3,000)</button>
+    <button onclick="startStartup()">Crear una startup ($7,000)</button>
+
+    <p><strong>Registro:</strong></p>
+    <div id="log"></div>
+</div><div id="game-container">
         <h1>¡Hazte Millonario!</h1>
         <p id="description">Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
         
