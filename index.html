@@ -1,87 +1,35 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacerse Millonario</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hazte Millonario</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="customization-screen">
-    <h2>Personaliza tu personaje</h2>
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" placeholder="Escribe tu nombre">
-    
-    <label for="gender">Género:</label>
-    <select id="gender">
-        <option value="male">Masculino</option>
-        <option value="female">Femenino</option>
-    </select>
-
-    <button onclick="startGame()">Comenzar Juego</button>
-</div>
-
-<!-- Contenedor del juego (oculto al inicio) -->
-<div id="game-container" style="display: none;">
-    <h1>¡Hazte Millonario!</h1>
-    <p id="welcome-message"></p>
-    <p>Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
-    <p><strong>Capital:</strong> <span id="capital">10000</span></p>
-    
-    <button onclick="openStore()">Abrir una tienda ($5,000)</button>
-    <button onclick="invest()">Invertir en acciones ($3,000)</button>
-    <button onclick="startStartup()">Crear una startup ($7,000)</button>
-
-    <p><strong>Registro:</strong></p>
-    <div id="log"></div>
-</div>  <div id="customization-screen">
-    <h2>Personaliza tu personaje</h2>
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" placeholder="Escribe tu nombre">
-    
-    <label for="gender">Género:</label>
-    <select id="gender">
-        <option value="male">Masculino</option>
-        <option value="female">Femenino</option>
-    </select>
-
-    <button onclick="startGame()">Comenzar Juego</button>
-</div>
-
-<!-- Contenedor del juego (oculto al inicio) -->
-<div id="game-container" style="display: none;">
-    <h1>¡Hazte Millonario!</h1>
-    <p id="welcome-message"></p>
-    <p>Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
-    <p><strong>Capital:</strong> <span id="capital">10000</span></p>
-    
-    <button onclick="openStore()">Abrir una tienda ($5,000)</button>
-    <button onclick="invest()">Invertir en acciones ($3,000)</button>
-    <button onclick="startStartup()">Crear una startup ($7,000)</button>
-
-    <p><strong>Registro:</strong></p>
-    <div id="log"></div>
-</div><div id="game-container">
+    <div class="container">
         <h1>¡Hazte Millonario!</h1>
-        <p id="description">Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
+        <p>Empiezas con <span id="dinero">$10,000</span>. ¡Elige tu camino!</p>
         
-        <div id="status">
-            <p><strong>Capital:</strong> <span id="capital">$10,000</span></p>
-        </div>
-        
-        <div id="actions">
-            <button onclick="chooseBusiness('tienda')">Abrir una tienda ($5,000)</button>
-            <button onclick="chooseBusiness('inversiones')">Invertir en acciones ($3,000)</button>
-            <button onclick="chooseBusiness('startup')">Crear una startup ($7,000)</button>
+        <div id="seleccion-personaje">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+            <button id="empezar">Empezar</button>
         </div>
 
-        <div id="log">
-            <h3>Registro:</h3>
-            <ul id="log-messages"></ul>
+        <div id="juego" style="display: none;">
+            <img id="personaje" src="" alt="Personaje">
+            <button onclick="abrirTienda()">Abrir una tienda ($5,000)</button>
+            <button onclick="invertirAcciones()">Invertir en acciones ($3,000)</button>
+            <button onclick="crearStartup()">Crear una startup ($7,000)</button>
+            <p id="registro"></p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
