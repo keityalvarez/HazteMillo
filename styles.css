@@ -1,57 +1,27 @@
-
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: #f8f9fa;
 }
 
-#game-container {
-    max-width: 600px;
-    margin: 50px auto;
+.container {
+    width: 80%;
+    margin: auto;
     padding: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: green;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
-#log {
-    margin-top: 20px;
-    text-align: left;
-}
-
-#log-messages {
-    list-style-type: none;
-    padding: 0;
-}#customization-screen {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-}
-
-#customization-screen input, 
-#customization-screen select, 
-#customization-screen button {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
+#personaje {
+    width: 150px;
+    height: auto;
+    margin: 20px;
 }
