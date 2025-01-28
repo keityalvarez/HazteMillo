@@ -1,66 +1,40 @@
-let dinero = 10000;
+let capital = 10000;
+let nombre = "";
+let genero = "";
+let inversiones = [];
 
-document.getElementById("empezar").addEventListener("click", function() {
-    let nombre = document.getElementById("nombre").value;
-    let sexo = document.getElementById("sexo").value;
-    if (nombre === "") {
-        alert("Por favor, ingresa un nombre.");
-        return;
-    }
-
-    document.getElementById("seleccion-personaje").style.display = "none";
+function iniciarJuego() {
+    nombre = document.getElementById("nombre").value;
+    genero = document.getElementById("genero").value;
+    document.getElementById("titulo").innerText = `Hola ${nombre}, empieza tu camino al éxito`;
+    document.getElementById("inicio").style.display = "none";
     document.getElementById("juego").style.display = "block";
-    
-    let personajeImg = sexo === "hombre" ? "hombre.png" : "mujer.png";
-    document.getElementById("personaje").src = personajeImg;
-
-    document.getElementById("registro").innerHTML = `Bienvenido, ${nombre}. ¡Empieza a invertir!`;
-});
-
-function actualizarDinero() {
-    document.getElementById("dinero").innerText = `$${dinero}`;
 }
 
-function registrarEvento(mensaje) {
-    let registro = document.getElementById("registro");
-    registro.innerHTML += `<p>${mensaje}</p>`;
-}
-
-function abrirTienda() {
-    if (dinero >= 5000) {
-        dinero -= 5000;
-        actualizarDinero();
-        registrarEvento("Has abierto una tienda. ¡Empieza a ganar clientes!");
+function invertir(tipo, costo) {
+    if (capital >= costo) {
+        capital -= costo;
+        inversiones.push(tipo);
+        document.getElementById("capital").innerText = `$${capital}`;
+        document.getElementById("mensaje").innerText = `Has invertido en ${tipo}. Espera a ver los resultados.`;
     } else {
-        registrarEvento("No tienes suficiente capital para abrir una tienda.");
+        document.getElementById("mensaje").innerText = "No tienes suficiente capital para esta inversión.";
     }
 }
 
-function invertirAcciones() {
-    if (dinero >= 3000) {
-        dinero -= 3000;
-        let ganancia = Math.random() > 0.5 ? 5000 : -3000;
-        dinero += ganancia;
-        actualizarDinero();
-        let resultado = ganancia > 0 ? "Ganaste dinero con las acciones." : "Perdiste dinero con las acciones.";
-        registrarEvento(resultado);
-    } else {
-        registrarEvento("No tienes suficiente capital para invertir en acciones.");
-    }
+function siguienteTurno() {
+    let evento = generarEvento();
+    capital += evento.ganancia;
+    document.getElementById("capital").innerText = `$${capital}`;
+    document.getElementById("eventos").innerText = evento.mensaje;
 }
 
-function crearStartup() {
-    if (dinero >= 7000) {
-        dinero -= 7000;
-        let exito = Math.random() > 0.7;
-        if (exito) {
-            dinero += 20000;
-            registrarEvento("Tu startup ha sido un éxito. ¡Ganaste $20,000!");
-        } else {
-            registrarEvento("Tu startup fracasó y perdiste la inversión.");
-        }
-        actualizarDinero();
-    } else {
-        registrarEvento("No tienes suficiente capital para crear una startup.");
-    }
+function generarEvento() {
+    const eventos = [
+        { mensaje: "¡Tu negocio está en auge! Ganas $2,000", ganancia: 2000 },
+        { mensaje: "El mercado cayó. Pierdes $1,500", ganancia: -1500 },
+        { mensaje: "Recibes una inversión sorpresa. Ganas $3,000", ganancia: 3000 },
+        { mensaje: "Tienes gastos inesperados. Pierdes $1,000", ganancia: -1000 }
+    ];
+    return eventos[Math.floor(Math.random() * eventos.length)];
 }
