@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacerse Millonario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>¡Hazte Millonario!</h1>
+        <p id="description">Empiezas con $10,000. ¡Elige tu camino para convertirte en millonario!</p>
+        
+        <div id="status">
+            <p><strong>Capital:</strong> <span id="capital">$10,000</span></p>
+        </div>
+        
+        <div id="actions">
+            <button onclick="chooseBusiness('tienda')">Abrir una tienda ($5,000)</button>
+            <button onclick="chooseBusiness('inversiones')">Invertir en acciones ($3,000)</button>
+            <button onclick="chooseBusiness('startup')">Crear una startup ($7,000)</button>
+        </div>
+
+        <div id="log">
+            <h3>Registro:</h3>
+            <ul id="log-messages"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
