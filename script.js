@@ -5,21 +5,23 @@ let sexo = "";
 function empezarJuego() {
     nombre = document.getElementById("nombre").value || "Jugador";
     sexo = document.getElementById("sexo").value;
-    document.getElementById("inicio").classList.add("hidden");
-    document.getElementById("juego").classList.remove("hidden");
+
+    document.getElementById("inicio").classList.add("hidden"); 
+    document.getElementById("juego").classList.remove("hidden"); 
+
     document.getElementById("mensajeBienvenida").innerText = `¡Bienvenido, ${nombre}! Administra bien tu dinero para hacerte millonario.`;
 }
 
 function invertir(opcion, costo) {
     if (capital < costo) {
-        agregarRegistro(`❌ No tienes suficiente dinero para ${opcion}.`);
+        agregarRegistro(`❌ No tienes suficiente dinero para invertir en ${opcion}.`);
         return;
     }
 
     capital -= costo;
     document.getElementById("capital").innerText = capital;
-    
-    let ganancia = Math.floor(Math.random() * 5000) + 2000;
+
+    let ganancia = Math.floor(Math.random() * 5000) + 2000; 
     setTimeout(() => {
         capital += ganancia;
         document.getElementById("capital").innerText = capital;
