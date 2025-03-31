@@ -1,51 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.5s ease-in-out;
 }
 
-.hidden {
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6a4c93;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+section {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.period {
+    background-color: #f3e5ab;
+    margin: 10px;
+    border-radius: 10px;
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.period:hover {
+    transform: scale(1.05);
+    background-color: #ffcc80;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#curiosidad {
     display: none;
-}
-
-h1, h2, h3 {
-    color: #222;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #28a745;
+    background-color: #ff7043;
     color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
-}
-
-#registro {
-    max-width: 80%;
-    margin: auto;
-    text-align: left;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    height: 200px;
-    overflow-y: auto;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
+    background-color: #ff5722;
 }
